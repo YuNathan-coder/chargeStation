@@ -125,35 +125,13 @@ public class UserSerciceImpl extends ServiceImpl<UserMapper, User> implements Us
         if (StringUtils.isNotBlank(user.getName())) {
             queryWrapper.like("name",user.getName());
         }
-        //根据厂家编号查询用户
-        if (StringUtils.isNotBlank(user.getFactoryNumber())) {
-            queryWrapper.eq("factory_number", user.getFactoryNumber());
-        }
         List<User> usersList = super.list(queryWrapper);
 
 
         return usersList;
     }
 
-    @Override
-    public Boolean findUserByFactoryNumber(String factoryNumber) {
 
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("factory_number",factoryNumber);
-        User user = super.getOne(queryWrapper,false);
-        if (user == null) {
-            return false;
-        }
 
-        return true;
-    }
 
-    @Override
-    public Boolean setFactoryNumber(Integer id, String factoryNumber) {
-        User user = new User();
-        user.setId(id);
-        user.setFactoryNumber(factoryNumber);
-        return super.updateById(user);
-
-    }
 }

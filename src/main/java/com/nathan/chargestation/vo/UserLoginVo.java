@@ -20,10 +20,6 @@ public class UserLoginVo  implements Serializable {
          */
         @TableId(value = "id", type = IdType.AUTO)
         private Integer id;
-        /**
-         * 用户唯一标识
-         */
-        private String openId;
 
         /**
          * 用户姓名
@@ -64,10 +60,7 @@ public class UserLoginVo  implements Serializable {
         @DateTimeFormat(pattern = Constast.TIME_FORM)
         private Date registeredTime;
 
-        /**
-         * 厂家编号（唯一）
-         */
-        private String factoryNumber;
+
 
     /**
      * token

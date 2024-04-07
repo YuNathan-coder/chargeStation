@@ -49,15 +49,8 @@ public interface UserService extends IService<User> {
      */
     List<User> findAllUser (User user);
 
-    /**
-     * @Author:NathanYu
-     * @Description: 根据厂家查询是否有是否有对应的用户
-     * @Date: 2022/7/22 6:31
-     * @param factoryNumber
-     * @return Boolean
-     */
-    Boolean findUserByFactoryNumber (String factoryNumber);
 
-    Boolean setFactoryNumber (Integer id, String factoryNumber);
+
+
 
 }
