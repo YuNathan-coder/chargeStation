@@ -6,6 +6,8 @@ import com.nathan.chargestation.entity.EquipmentInfo;
 import com.nathan.chargestation.entity.Loginfo;
 import com.nathan.chargestation.vo.EquipmentInfoVo;
 
+import java.util.List;
+
 
 /**
  * <p>
@@ -33,4 +35,15 @@ public interface EquipmentInfoService extends IService<EquipmentInfo> {
      */
     EquipmentInfo findByImei (String imei);
 
+
+    /**
+     * 查找所有设备
+     * @return
+     */
+    List<EquipmentInfo> findAllEquipmentInfo();
+
+    /**
+     * 查找所有报警设备
+     */
+    List<EquipmentInfo> findAlarmEquipment();
 }

@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 @Transactional
@@ -57,6 +58,33 @@ public class EquipmentInfoServicelmpl extends ServiceImpl<EquipmentInfoMapper, E
         QueryWrapper<EquipmentInfo> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("imei",imei);
         return super.getOne(queryWrapper,false);
+    }
+
+
+    /**
+     * 查找所有设备
+     * @return
+     */
+    @Override
+    public List<EquipmentInfo> findAllEquipmentInfo() {
+        QueryWrapper<EquipmentInfo> queryWrapper = new QueryWrapper<>();
+
+        List<EquipmentInfo> equipmentInfoList = super.list(queryWrapper);
+        return equipmentInfoList;
+    }
+
+    /**
+     * 查找所有报警设备
+     */
+    @Override
+    public List<EquipmentInfo> findAlarmEquipment() {
+
+        QueryWrapper<EquipmentInfo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("alarm_state","报警");
+
+        List<EquipmentInfo> alarmEquipmentInfoList = super.list(queryWrapper);
+
+        return alarmEquipmentInfoList;
     }
 }
 
