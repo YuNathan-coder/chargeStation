@@ -30,11 +30,14 @@ public enum ErrorCodeEnums {
     TWO_PASSWORD_NOT_SAME(1008, "确认密码与新密码不同"),
     TOKEN_GENERATE_FAILURE(1009, "token生成失败"),
     PHONE_REGISTERED(1010, "手机号已被其他用户注册"),
-    FACTORYNUMBER_EXISTS(1011,"厂家编号已经存在"),
     TOKEN_NULL_ERROR(1012,"token为空"),
 
 
-    STYLE_NUMBER_NOT_EXISTS(2001, "货号为空"),
+    /**
+     * 充电站错误代码
+     */
+    IMEI_EXISTS(2000, "充电枪已经存在")
+
     ;
 
 
